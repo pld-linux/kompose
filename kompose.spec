@@ -1,5 +1,5 @@
 Summary:	Provides a full screen view of all open windows
-Summary(pl):	Udostêpnia pe³noekranowy podgl±d wszystkich otwartych okien
+Summary(pl):	Udostêpnianie pe³noekranowego podgl±du wszystkich otwartych okien
 Name:		kompose
 Version:	0.4.2
 Release:	0.1
