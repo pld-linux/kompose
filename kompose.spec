@@ -28,7 +28,8 @@ oddzielny obrazek.
 
 %build
 cp -f /usr/share/automake/config.sub admin/
-%configure
+%configure \
+	--with-qt-libraries=%{_libdir}
 %{__make}
 
 %install
