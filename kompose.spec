@@ -20,7 +20,7 @@ it's own.
 
 %description -l pl
 Kompose jest programem pozwalaj±cym przegl±daæ wszystkie wirtualne
-pulpity w trybie pe³no ekranowym, gdzie okna reprezêntowane s± jako
+pulpity w trybie pe³noekranowym, gdzie okna reprezentowane s± jako
 oddzielny obrazek.
 
 %prep
