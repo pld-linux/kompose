@@ -8,6 +8,8 @@ Group:		X11/Applications
 Source0:	http://download.berlios.de/kompose/%{name}-%{version}.tar.bz2
 # Source0-md5:	b51839098432590c0903da3e75a853ac
 URL:		http://kompose.berlios.de
+BuildRequires:	automake
+BuildRequires:	imlib2-devel
 BuildRequires:	kdelibs-devel >= 3.0.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -25,6 +27,7 @@ oddzielny obrazek.
 %setup -q
 
 %build
+cp -f /usr/share/automake/config.sub .
 %configure
 %{__make}
 
