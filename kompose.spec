@@ -1,16 +1,16 @@
 Summary:	Provides a full screen view of all open windows
 Summary(pl):	Udostêpnianie pe³noekranowego podgl±du wszystkich otwartych okien
 Name:		kompose
-Version:	0.4.2
+Version:	0.5.1
 Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://download.berlios.de/kompose/%{name}-%{version}.tar.bz2
-# Source0-md5:	b51839098432590c0903da3e75a853ac
+# Source0-md5:	70ac5180af3ec86da366c48d10e71dce
 URL:		http://kompose.berlios.de/
 BuildRequires:	automake
 BuildRequires:	imlib2-devel
-BuildRequires:	kdelibs-devel >= 3.0.3
+BuildRequires:	kdelibs-devel >= 3.2
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -53,5 +53,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kompose
 %{_desktopdir}/kompose.desktop
 %{_datadir}/apps/%{name}
-%{_iconsdir}/hicolor/16x16/apps/kompose.png
-%{_iconsdir}/hicolor/32x32/apps/kompose.png
+%{_iconsdir}/hicolor/*/*/kompose.png
