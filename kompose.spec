@@ -7,10 +7,11 @@ License:	GPL
 Group:		X11/Applications
 Source0:	http://download.berlios.de/kompose/%{name}-%{version}.tar.bz2
 # Source0-md5:	b51839098432590c0903da3e75a853ac
-URL:		http://kompose.berlios.de
+URL:		http://kompose.berlios.de/
 BuildRequires:	automake
 BuildRequires:	imlib2-devel
 BuildRequires:	kdelibs-devel >= 3.0.3
+BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -41,15 +42,16 @@ install -d $RPM_BUILD_ROOT%{_desktopdir}
 
 mv -f $RPM_BUILD_ROOT%{_datadir}/applnk/Utilities/%{name}.desktop $RPM_BUILD_ROOT%{_desktopdir}
 
+%find_lang %{name} --with-kde
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING README
 %attr(755,root,root) %{_bindir}/kompose
 %{_desktopdir}/kompose.desktop
-%{_datadir}/apps/%{name}/*
-%{_kdedocdir}/en/%{name}/*
+%{_datadir}/apps/%{name}
 %{_iconsdir}/hicolor/16x16/apps/kompose.png
 %{_iconsdir}/hicolor/32x32/apps/kompose.png
