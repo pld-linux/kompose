@@ -2,8 +2,8 @@ Summary:	Provides a full screen view of all open windows
 Summary(pl):	Udostêpnianie pe³noekranowego podgl±du wszystkich otwartych okien
 Name:		kompose
 Version:	0.5.1
-Release:	0.1
-License:	GPL
+Release:	1
+License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.berlios.de/kompose/%{name}-%{version}.tar.bz2
 # Source0-md5:	70ac5180af3ec86da366c48d10e71dce
@@ -29,18 +29,26 @@ oddzielny obrazek.
 
 %build
 cp -f /usr/share/automake/config.sub admin/
+
 %configure \
-	--with-qt-libraries=%{_libdir}
+%if "%{_lib}" == "lib64"
+	--enable-libsuffix=64 \
+%endif
+	--%{?debug:en}%{!?debug:dis}able-debug%{?debug:=full} \
+	--with-qt-libraries=%{_libdir} \
+	--with-imlib2-config=%{_bindir}
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_desktopdir}
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir}
 
-mv -f $RPM_BUILD_ROOT%{_datadir}/applnk/Utilities/%{name}.desktop $RPM_BUILD_ROOT%{_desktopdir}
+mv -f $RPM_BUILD_ROOT%{_datadir}/applnk/Utilities/%{name}.desktop \
+	$RPM_BUILD_ROOT%{_desktopdir}
 
 %find_lang %{name} --with-kde
 
