@@ -1,19 +1,20 @@
 # TUDO
 # - icons
-# - da locale not packaged: /usr/share/locale/da/LC_MESSAGES/kompose.mo
 Summary:	Provides a full screen view of all open windows
 Summary(pl):	Udostêpnianie pe³noekranowego podgl±du wszystkich otwartych okien
 Name:		kompose
-Version:	0.5.3
-Release:	0.10
+Version:	0.5.4
+Release:	0.1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.berlios.de/kompose/%{name}-%{version}.tar.bz2
-# Source0-md5:	d0605f3651ed3f2eca9b961266669d30
+# Source0-md5:	9ae1540e91a4aeef0f71b28cf02c7869
 URL:		http://kompose.berlios.de/
 BuildRequires:	automake
+BuildRequires:	autoconf
 BuildRequires:	imlib2-devel
 BuildRequires:	kdelibs-devel >= 3.2
+BuildRequires:	libtool
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,8 +34,10 @@ oddzielny obrazek.
 echo 'Categories=Qt;KDE;Graphics;' >> src/%{name}.desktop
 
 %build
-cp -f /usr/share/automake/config.sub admin/
+export kde_htmldir=%{_kdedocdir}
+export kde_libs_htmldir=%{_kdedocdir}
 
+%{__make} -f admin/Makefile.common cvs
 %configure \
 %if "%{_lib}" == "lib64"
 	--enable-libsuffix=64 \
