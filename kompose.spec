@@ -1,4 +1,4 @@
-# TUDO
+# TODO
 # - icons
 Summary:	Provides a full screen view of all open windows
 Summary(pl):	Udostêpnianie pe³noekranowego podgl±du wszystkich otwartych okien
@@ -9,6 +9,7 @@ License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.berlios.de/kompose/%{name}-%{version}.tar.bz2
 # Source0-md5:	9ae1540e91a4aeef0f71b28cf02c7869
+Patch0:		%{name}-kde_3.5_fix.patch
 URL:		http://kompose.berlios.de/
 BuildRequires:	automake
 BuildRequires:	autoconf
@@ -30,6 +31,7 @@ oddzielny obrazek.
 
 %prep
 %setup -q
+%patch0 -p1
 # categories choice isn't probably the best
 echo 'Categories=Qt;KDE;Graphics;' >> src/%{name}.desktop
 
