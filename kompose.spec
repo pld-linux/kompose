@@ -1,7 +1,7 @@
 # TODO
 # - icons
 Summary:	Provides a full screen view of all open windows
-Summary(pl):	Udostêpnianie pe³noekranowego podgl±du wszystkich otwartych okien
+Summary(pl.UTF-8):   UdostÄ™pnianie peÅ‚noekranowego podglÄ…du wszystkich otwartych okien
 Name:		kompose
 Version:	0.5.4
 Release:	0.1
@@ -24,9 +24,9 @@ Kompose currently allows a fullscreen view of all your virtual
 desktops where every window is represented by a scaled screenshot of
 it's own.
 
-%description -l pl
-Kompose jest programem pozwalaj±cym przegl±daæ wszystkie wirtualne
-pulpity w trybie pe³noekranowym, gdzie okna reprezentowane s± jako
+%description -l pl.UTF-8
+Kompose jest programem pozwalajÄ…cym przeglÄ…daÄ‡ wszystkie wirtualne
+pulpity w trybie peÅ‚noekranowym, gdzie okna reprezentowane sÄ… jako
 oddzielny obrazek.
 
 %prep
