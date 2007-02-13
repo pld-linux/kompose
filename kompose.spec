@@ -1,7 +1,7 @@
 # TODO
 # - icons
 Summary:	Provides a full screen view of all open windows
-Summary(pl.UTF-8):   Udostępnianie pełnoekranowego podglądu wszystkich otwartych okien
+Summary(pl.UTF-8):	Udostępnianie pełnoekranowego podglądu wszystkich otwartych okien
 Name:		kompose
 Version:	0.5.4
 Release:	0.1
