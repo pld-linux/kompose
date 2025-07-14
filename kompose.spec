@@ -31,7 +31,7 @@ oddzielny obrazek.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 # categories choice isn't probably the best
 echo 'Categories=Qt;KDE;Graphics;' >> src/%{name}.desktop
 
